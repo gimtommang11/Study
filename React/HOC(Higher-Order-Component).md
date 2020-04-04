@@ -69,5 +69,5 @@ export const HOC(options)(component)
 
 [컴포넌트에 날개를 달아줘, 리액트 Higher-order Component (HoC) - 벨로퍼트](https://velopert.com/3537)
 
-[리액트(React) 이해 4 - Higher Order Component(HOC)로 컴포넌트 재사용 하기]([https://usecode.pw/react-%EC%9D%B4%ED%95%B4-4-higher-order-component/](https://usecode.pw/react-이해-4-higher-order-component/))
+[리액트(React) 이해 4 - Higher Order Component(HOC)로 컴포넌트 재사용 하기](https://usecode.pw/react-%EC%9D%B4%ED%95%B4-4-higher-order-component/]
 
