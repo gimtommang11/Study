@@ -50,7 +50,7 @@ export default HOC(Componet)
 
 
 
-랜더링 하기전에 전처리값이 필요하다면?
+#### 랜더링 하기전에 전처리값이 필요하다면?
 
 ##### 컴포넌트 리턴 전에 함수를 리턴하고 컴포넌트를 리턴한다.
 
@@ -68,3 +68,6 @@ export const HOC(options)(component)
 참고자료
 
 [컴포넌트에 날개를 달아줘, 리액트 Higher-order Component (HoC) - 벨로퍼트](https://velopert.com/3537)
+
+[리액트(React) 이해 4 - Higher Order Component(HOC)로 컴포넌트 재사용 하기]([https://usecode.pw/react-%EC%9D%B4%ED%95%B4-4-higher-order-component/](https://usecode.pw/react-이해-4-higher-order-component/))
+
