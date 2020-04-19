@@ -2,7 +2,7 @@
 
 노드(vertice)와 간선(정점/edge/arcs)로 이루어진 자료 구조.
 
-![1587196925597](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587196925597.png)
+![1587196925597](../images/graph/graph.png)
 
 #### 그래프 용어
 
@@ -21,8 +21,9 @@
 
   **진입차수** 는 외부 노드에서 들어오는 간선의  수
 
-  - ![1587197522397](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587197522397.png)
-  - 위 그래프의 A노드에서 진출차수는 2, 진입차수는 1이다.
+  - ![directedGraph](../images/graph/DirectedGraph_example.png)
+  
+    ​	위 그래프의 A노드에서 진출차수는 2, 진입차수는 1이다.
 
 ### 그래프의 특징 
 
@@ -44,7 +45,7 @@
 
 - **방향 그래프(Directed Graph)**
 
-  ![1587199410544](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587199410544.png)
+  ![DirectedGraph](../images/graph/Directed_Graph.png)
 
   간선에 방향성이 추가된 그래프이다. 위 그래프의 흐름은 **A에서 B로** 진행되며, **<A,B>**로 표기할 수 있다.
 
@@ -52,7 +53,7 @@
 
 - **무방향 그래프(Undirected Graph)**
 
-  ![1587199362039](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587199362039.png)
+  ![undirected Graph](../images/undirected_graph.png)
 
   방향성이 없는 그래프이다.  A에서 B로, B에서 A로도 갈 수 있으며 **(A,B)**로 표기할 수 있다.
 
@@ -60,7 +61,7 @@
 
 #### 가중치 그래프
 
-![1587200513538](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587200513538.png)
+![weighted graph](../images/graph/weighted_graph.png)
 
 그래프 간선에 **비용/가중치가 부여**되어있는 그래프이다.
 
@@ -70,7 +71,7 @@ ex) 각 섬 사이를 지나는데 걸리는 시간 등
 
 - **사이클(Cycle)**
 
-  ![1587200767198](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587200767198.png)
+  ![cycle graph](../images/graph/cycle.png)
 
   ​	단순 경로에서 **시작 정점과 도착 정점이 동일**한 그래프이다. 위 사진에서는 A에서 시작하여 A로 끝난다.
 
@@ -82,7 +83,7 @@ ex) 각 섬 사이를 지나는데 걸리는 시간 등
 
 - **완전 그래프**
 
-  ![1587200986204](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587200986204.png)
+  ![complete graph](../images/graph/complete_graph.png)
 
   **모든 정점이 서로 연결**되어있는 그래프이다.
 
@@ -94,25 +95,25 @@ ex) 각 섬 사이를 지나는데 걸리는 시간 등
 
 - **연결 그래프**
 
-  ![1587201422850](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587201422850.png)
+  ![ connected graph](../images/graph/connected_graph.png)
 
   ​	노드들이 하나도 빠짐없이 간선에 의해 **연결되어 있는** 그래프이다. 
 
 - **비연결 그래프**
 
-  ![1587201529115](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587201529115.png)
+  ![Disconnected Graph](../images/graph/Disconnected Graph.png)
 
   노드들 중, 간선에 의해 **연결되어있지 않은** 노드가 있는 그래프이다.
 
 #### 신장 트리(Spanning Tree)
 
-![1587201672538](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587201672538.png)
+![SpanningTree](../images/graph/spanningTree.png)
 
 -  그래프의 **모든 정점을 포함**하는 트리
 - 그래프의 **최소 연결 부분 그래프**(간선의 수가 제일 적은 그래프)
 - 그래프에서 **일부 간선의 채택**하여 만든 그래프
   - **하나의 그래프**에선 **여러개의 신장 트리**가 나올 수 있다
-  - ![1587202521181](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587202521181.png)
+  - ![spanningTree_example](../images/graph/spanningTrees.png)
 - **트리의 특수한 형태**, 사이클을 포함해선 안된다.
 
 #### 최소 신장 트리(Minimal Spanning Tree/ MST)
@@ -131,7 +132,7 @@ ex) 각 섬 사이를 지나는데 걸리는 시간 등
 
 인접 행렬은 **이차원 배열** 을 이용하는 방식이다.
 
-![1587214655303](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587214655303.png)
+![Adjacency matrix](../images/graph/Adjacency_matrix.png)
 
 완성된 배열의 모양은 A, B, C, D 노드에 다른 노드들이 **인접 정점**이라면 **1**, 아니면 **0**을 넣어준다.
 
@@ -156,7 +157,7 @@ else{
 
 인접 리스트는 **연결리스트**를 이용한다.
 
-![1587223064188](C:\Users\user\AppData\Roaming\Typora\typora-user-images\1587223064188.png)
+![1587223064188](../images/graph/Adjacency_list.png)
 
 연결리스트로 표현해서, 각 노드에 인접하게 연결되어있는 노드들을 순서에 상관없이 이어준다. 
 
@@ -165,10 +166,6 @@ else{
 연결된 간선만의 정보를 저장해서 **간선의 개수** 만큼의 공간을 차지한다.  O(n^2)이다. 
 
 간선이 m일때, 총 노드의 수는 2m개이다.
-
-
-
-
 
 #### 참고자료
 
