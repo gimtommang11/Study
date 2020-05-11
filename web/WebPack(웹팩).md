@@ -75,6 +75,8 @@ module.exports = {
 }
 ```
 
+적용할 수 있는 다양한 로더들을 [이곳](https://webpack.js.org/loaders/)에서 볼 수 있다.
+
 #### ts 로더 추가하기
 
 예시로 ts로더를 추가해보자. 이 로더를 적용하지 않고 ts를 사용하면 오류가 난다
@@ -131,6 +133,8 @@ module.export ={
 
 예시로 `html-webpack-plugin`을 적용시켜보겠다.
 
+\* `html-webpack-plugin` : 
+
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 ```
@@ -150,3 +154,4 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 로더는 파일해석/ 변환과정에 관여하고
 
 플러그인은 결과물의 결과 형태를 바꾼다.
+
