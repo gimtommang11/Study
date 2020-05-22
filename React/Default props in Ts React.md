@@ -26,3 +26,5 @@ export default ModalButton;
 ```
 
 이런식으로 defaultProps를 사용하면 isCancel이나 buttonName props가 전달이 되지 않아도 미리 정의해논 값이 들어간다
+
+\+ props에 `?`가 붙어있는거는 `Optional Property`로 props를 내려줄때 아무것도 없어도 오류가 발생하지 않는다
