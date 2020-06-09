@@ -1,91 +1,82 @@
-// const readline = require('readline');
-
-// const rl = readline.createInterface({
-//   input: process.stdin,
-//   output: process.stdout
-// });
-// rl.on('line', function(answer) {
-// 	console.log(answer);
-// 	rl.close();
-// });
-
-let list = [];
-
-// const Node = (value) => {
-//   let node = {}
-//   node.value = value;
-//   node.next = null;
-//   return node
-// }
-
-const addNode = (value) => {
-  list.push(Node(value))
-  list.sort(function (a, b) {
-    return a.value < b.value ? -1 : a.value > b.value ? 1 : 0;
-  });
-  console.log(list)
+function Node(value) {
+  this.value = value;
+  this.next = null;
 }
 
-const deleteNode = (value) => {
-  if (list.length !== 0) {
-    const isExist = function (node) {
-      return node.value !== value;
+function LinkedList() {
+  this._length = 0;
+  this._head = null;
+}
+
+LinkedList.prototype.addNode = function (value) {
+  let node = new Node(value);
+  let pointer = this._head;
+
+  if (this._head == null) {
+    this._head = node;
+    this._length++;
+  } else if (this.circuit(node) == 0) {
+    this._head = node;
+    this._head.next = pointer;
+    this._length++;
+    this.sort();
+  }
+}
+
+LinkedList.prototype.circuit = function (node) {
+  let pointer = this._head;
+  while (pointer.next == null) {
+    if (pointer.value == node.value) {
+      console.log("중복 값이 있습니다.")
+      pointer = pointer.next;
+      return 1
+    } else {
+      return 0;
     }
-    list = list.filter(isExist);
-    console.log(list)
-  } else {
-    console.log("삭제 할 노드가 없습니다.")
+  }
+}
+
+LinkedList.prototype.sort = function () {
+  let before = null;
+  let pointer = this._head;
+
+  for (let i = 0; i < this._length; i++) {
+    if (pointer.next != null) {
+      if (pointer.value > pointer.next.value) {
+        if (before == null) {
+
+          before = pointer.next;
+          this._head = pointer.next;
+          pointer.next = this._head.next;
+          this._head.next = pointer;
+        } else {
+          before = pointer.next
+          before.next = pointer.next;
+          pointer.next = pointer.next.next;
+        }
+      }
+    }
   }
 }
 
 const singlyLinkedList = () => {
-  let behavior
-  while (behavior !== "중지") {
-    behavior = prompt("동작을 입력해주세요")
-    switch (behavior) {
-      case ("생성"):
-        let addValue = prompt("값을 입력해주세요")
-        addNode(addValue)
+  var list = new LinkedList();
+  let commend;
+  while (commend !== "중지") {
+    commend = prompt("삽입, 삭제, 중지 중 하나를 입력하세요")
+    switch (commend) {
+      case ("삽입"):
+        let addValue = prompt("값을 입력하세요")
+        list.addNode(addValue);
+        console.log(list);
         break;
       case ("삭제"):
-        let deleteValue = prompt("삭제값을 입력하세요")
-        deleteNode(deleteValue)
         break;
       default:
         break;
     }
   }
+  console.log(list)
 }
 
-singlyLinkedList();
-console.log(list)
-
-
-
-  const Node = (value) => {
-    this.value = value;
-    this.next = null;
-  }
-
-// const singlyLinkedList = () => {
-//   let list = {};
-//   list.head = null;
-//   list.tail = null;
-
-//   list.addNode = (value) => {
-//     if (list.head == null) {
-//       list.head = Node(value);
-//     } else {
-//       let tailNode = list.tail;
-//       tailNode.next = Node(value);
-//       list.tail = tailNode.next
-//     }
-//     list.addNode(2);
-//     list.addNode(4);
-//     console.log(`list : ${list}`)
-//     return list;
-//   }
-// }
-
-// singlyLinkedList();
-// console.log('a')
+singlyLinkedList()
