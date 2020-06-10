@@ -21,20 +21,21 @@ LinkedList.prototype.addNode = function (value) {
     this._length++;
     this.sort();
   }
-}
+};
 
 LinkedList.prototype.circuit = function (node) {
   let pointer = this._head;
-  while (pointer.next == null) {
+
+  while (true) {
     if (pointer.value == node.value) {
-      console.log("중복 값이 있습니다.")
-      pointer = pointer.next;
-      return 1
-    } else {
-      return 0;
+      console.log("중복 값이 있습니다.");
+      return 1;
     }
+    if (pointer.next == null) break;
+    pointer = pointer.next;
   }
-}
+  return 0;
+};
 
 LinkedList.prototype.sort = function () {
   let before = null;
@@ -44,39 +45,38 @@ LinkedList.prototype.sort = function () {
     if (pointer.next != null) {
       if (pointer.value > pointer.next.value) {
         if (before == null) {
-
           before = pointer.next;
           this._head = pointer.next;
           pointer.next = this._head.next;
           this._head.next = pointer;
         } else {
-          before = pointer.next
+          before = pointer.next;
           before.next = pointer.next;
           pointer.next = pointer.next.next;
         }
       }
     }
   }
-}
+};
 
 const singlyLinkedList = () => {
   var list = new LinkedList();
   let commend;
   while (commend !== "중지") {
-    commend = prompt("삽입, 삭제, 중지 중 하나를 입력하세요")
+    commend = prompt("삽입, 삭제, 중지 중 하나를 입력하세요");
     switch (commend) {
-      case ("삽입"):
-        let addValue = prompt("값을 입력하세요")
+      case "삽입":
+        let addValue = prompt("값을 입력하세요");
         list.addNode(addValue);
         console.log(list);
         break;
-      case ("삭제"):
+      case "삭제":
         break;
       default:
         break;
     }
   }
-  console.log(list)
-}
+  console.log(list);
+};
 
-singlyLinkedList()
+singlyLinkedList();
